@@ -3,6 +3,7 @@ const Post = require('../models/posts')
 const getPosts = async (req, res) => {
     try {
         const posts = await Post.find()
+
         res.status(200).json(posts)
     } catch (err) {
         res.status(404).json({
@@ -11,6 +12,19 @@ const getPosts = async (req, res) => {
     }
 }
 
+const createPost = async (req, res) => {
+    const newPost = new Post(req.body)
+    try {
+        await newPost.save()
+        res.status(201).json(newPost)
+    } catch (err) {
+        res.status(404).json({
+            message: err.message
+        })
+    }
+}
+
 module.exports = {
-    getPosts
+    getPosts,
+    createPost
 }

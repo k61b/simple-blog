@@ -5,11 +5,16 @@ const initialState = {
 }
 
 const postReducer = (state = initialState, action) => {
-    switch(action.types) {
+    switch(action.type) {
         case types.FETCH_POSTS: 
         return {
             ...state,
             posts: action.payload
+        }
+        case types.CREATE_POST: 
+        return {
+            ...state,
+            posts: [...state.posts, action.payload]
         }
         default: 
         return {

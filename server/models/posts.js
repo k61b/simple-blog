@@ -1,20 +1,20 @@
 const mongoose = require('mongoose')
 
-const postSchema = mongoose.Schema({
+const postSchema = new mongoose.Schema({
     title: {
-        String,
+        type: String,
     },
     subtitle: {
-        String,
+        type: String,
     },
     content: {
-        String,
+        type: String,
     },
     tag: {
-        String,
+        type: String,
     },
     image: {
-        String,
+        type: String,
     },
     createdAt: {
         type: Date,

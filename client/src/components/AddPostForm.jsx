@@ -17,6 +17,7 @@ import {
 import { useForm, Controller } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { createPost } from '../actions/post'
 
 const useStyles = makeStyles(theme => ({
     paper: {
@@ -33,7 +34,7 @@ const postSchema = yup.object().shape({
     title: yup.string().required(),
     subtitle: yup.string().required(),
     content: yup.string().min(20).required(),
-    tag: yup.mixed().oneOf(tags)
+    tag: yup.mixed().oneOf(tags),
 })
 
 const AddPostForm = ({ open, handleClose }) => {
@@ -46,15 +47,15 @@ const AddPostForm = ({ open, handleClose }) => {
         resolver: yupResolver(postSchema)
     })
 
+    const onSubmit = (data) => {
+        dispatch(createPost({ ...data, image: file }))
+        clearForm()
+    }
+
     const clearForm = () => {
         reset();
         setFile(null)
         handleClose()
-    }
-
-    const onSubmit = (data) => {
-        // dispatch(createPost())
-        clearForm()
     }
 
     const classes = useStyles()
@@ -137,9 +138,9 @@ const AddPostForm = ({ open, handleClose }) => {
             <DialogActions>
                 <Button color="inherit" onClick={clearForm}>Cancel</Button>
                 <Button type='submit'
-                    variant='outlined'
-                    color="inherit"
                     onClick={() => handleSubmit(onSubmit)()}
+                    color="primary"
+                    variant='outlined'
                 >Create</Button>
             </DialogActions>
         </Dialog>
