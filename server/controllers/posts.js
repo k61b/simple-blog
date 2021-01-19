@@ -12,6 +12,18 @@ const getPosts = async (req, res) => {
     }
 }
 
+const getSinglePost = async (req, res) => {
+    try {
+        const { id } = req.params
+        const post = await Post.findById(id)
+        res.status(200).json(post)
+    } catch (err) {
+        res.status(404).json({
+            message: err.message
+        })
+    }
+}
+
 const createPost = async (req, res) => {
     const newPost = new Post(req.body)
     try {
@@ -26,5 +38,6 @@ const createPost = async (req, res) => {
 
 module.exports = {
     getPosts,
-    createPost
+    createPost,
+    getSinglePost
 }

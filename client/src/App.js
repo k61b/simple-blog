@@ -20,6 +20,7 @@ import {
 import PenIcon from '@material-ui/icons/Create'
 import PostsList from './components/PostsList'
 import AddPostForm from './components/AddPostForm'
+import PostDetails from './components/PostDetails'
 import { fetchPosts } from './actions/post'
 
 const useStyles = makeStyles((theme) => ({
@@ -79,6 +80,7 @@ const App = () => {
             <Router>
               <Switch>
                 <Route exact path="/posts" component={PostsList} />
+                <Route exact path="/posts/:id" component={PostDetails} />
               </Switch>
 
               <Redirect from="/" to="/posts" />
