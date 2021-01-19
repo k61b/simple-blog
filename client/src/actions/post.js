@@ -37,3 +37,15 @@ export const createPost = (post) => async (dispatch) => {
         console.log(err)
     }
 }
+
+export const deletePost = (id) => async (dispatch) => {
+    try {
+        const { data } = await api.deletePost(id)
+        dispatch({
+            type: types.DELETE_POST,
+            payload: data._id
+        })
+    } catch (err) {
+        console.log(err)
+    }
+}

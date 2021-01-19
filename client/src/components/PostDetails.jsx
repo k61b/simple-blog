@@ -6,7 +6,7 @@ import { Typography, Paper, Divider, Button, Chip } from '@material-ui/core'
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
 import noImage from '../img/noimage.svg'
-import { fetchSinglePost } from '../actions/post'
+import { fetchSinglePost, deletePost } from '../actions/post'
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -46,6 +46,11 @@ const PostDetails = ({ match, history, location }) => {
         return moment(date).fromNow()
     }
 
+    const removePost = () => {
+        dispatch(deletePost(currentPost._id))
+        history.push('/posts')
+    }
+
     const classes = useStyles()
     return (
         <Paper className={classes.paper} elevation={0}>
@@ -59,7 +64,8 @@ const PostDetails = ({ match, history, location }) => {
                             Edit
                         </Button>
                         {' '}
-                        <Button color='secondary' variant='outlined' startIcon={<DeleteIcon />}>
+                        <Button color='secondary' variant='outlined' startIcon={<DeleteIcon />} 
+                        onClick={removePost}>
                             Delete
                         </Button>
                     </div>

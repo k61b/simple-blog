@@ -36,8 +36,22 @@ const createPost = async (req, res) => {
     }
 }
 
+const deletePost = async (req, res) => {
+    const { id: _id } = req.params
+
+    try {
+        const deletedPost = await Post.findByIdAndRemove(_id)
+        res.status(200).json(deletedPost)
+    } catch (err) {
+        res.status(409).json({
+            message: err.message
+        })
+    }
+}
+
 module.exports = {
     getPosts,
     createPost,
-    getSinglePost
+    getSinglePost,
+    deletePost
 }
