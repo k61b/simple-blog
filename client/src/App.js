@@ -67,7 +67,7 @@ const App = () => {
               className={classes.container}
               color="inherit" />
             <Typography variant="h6" color="secondary" className={classes.title}>
-              <a href="http://localhost:3000/posts">Simple Blog</a>
+              <a href="https://simple-blog-frontend-kbt.herokuapp.com/posts">Simple Blog</a>
             </Typography>
 
             <Button color="primary" variant="outlined" startIcon={<PenIcon />} onClick={handleOpen}>
