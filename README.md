@@ -5,10 +5,9 @@ I made a blog website and use MongoDB, NodeJS and React.
 
 ### Look at this
 If you want to view the project, you must run both backend and frontend.
-````bash
-https://simple-blog-frontend-kbt.herokuapp.com/posts
-https://simple-blog-backend-kbt.herokuapp.com/posts
-````
+
+- [Backend](https://simple-blog-backend-kbt.herokuapp.com/posts)
+- [Frontend](https://simple-blog-frontend-kbt.herokuapp.com/posts)
 
 ### How I Use
 ````bash
