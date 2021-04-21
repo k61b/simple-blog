@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config()
+  require('dotenv').config()
 }
 
 const express = require('express')
@@ -16,12 +16,12 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors())
 
 mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 })
 
 const db = mongoose.connection
-db.on('error', error => console.error(error))
+db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
 
 app.use('/', indexRouter)
