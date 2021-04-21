@@ -7,8 +7,7 @@ const cors = require('cors')
 const config = require('./utils/config')
 const logger = require('./utils/logger')
 
-const indexRouter = require('./routes/index')
-const postRouter = require('./routes/posts')
+const blogsRouter = require('./controllers/blogs')
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
@@ -28,7 +27,6 @@ mongoose
     logger.error('error connecting to MongoDB', error.message)
   })
 
-app.use('/', indexRouter)
-app.use('/posts', postRouter)
+app.use('/posts', blogsRouter)
 
 module.exports = app
