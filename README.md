@@ -73,4 +73,4 @@ Project Link: [https://github.com/kayraberktuncer/mern-auth](https://github.com/
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [Thanks for the client part](https://github.com/TheStrikeM/mern-auth/tree/main/client)
+* [Redux Docs](https://redux.js.org/)
