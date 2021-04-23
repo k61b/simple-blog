@@ -1,17 +1,20 @@
 const express = require('express')
 const app = express()
+require('express-async-errors')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
 const config = require('./utils/config')
 const logger = require('./utils/logger')
+const middleware = require('./utils/middleware')
 
 const blogsRouter = require('./controllers/blogs')
 
+app.use(cors())
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
-app.use(cors())
+app.use(middleware.requestLogger)
 
 mongoose
   .connect(config.MONGODB_URI, {
@@ -28,5 +31,8 @@ mongoose
   })
 
 app.use('/posts', blogsRouter)
+
+app.use(middleware.unknownEndpoint)
+app.use(middleware.errorHandler)
 
 module.exports = app
