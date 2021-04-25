@@ -11,11 +11,6 @@ const middleware = require('./utils/middleware')
 
 const blogsRouter = require('./controllers/blogs')
 
-app.use(cors())
-app.use(bodyParser.json({ limit: '30mb', extended: true }))
-app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
-app.use(middleware.requestLogger)
-
 mongoose
   .connect(config.MONGODB_URI, {
     useNewUrlParser: true,
@@ -29,6 +24,11 @@ mongoose
   .catch((error) => {
     logger.error('error connecting to MongoDB', error.message)
   })
+
+app.use(cors())
+app.use(bodyParser.json({ limit: '30mb', extended: true }))
+app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
+app.use(middleware.requestLogger)
 
 app.use('/posts', blogsRouter)
 
