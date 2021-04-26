@@ -30,7 +30,7 @@ app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(middleware.requestLogger)
 
-app.use('/posts', blogsRouter)
+app.use('/api/posts', blogsRouter)
 
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
