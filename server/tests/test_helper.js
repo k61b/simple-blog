@@ -32,7 +32,7 @@ const nonExistingId = async () => {
   return blog._id.toString()
 }
 
-const blogsInDb = async () => {
+const postsInDb = async () => {
   const blogs = await Blog.find({})
   return blogs.map((blog) => blog.toJSON())
 }
@@ -40,5 +40,5 @@ const blogsInDb = async () => {
 module.exports = {
   initialPosts,
   nonExistingId,
-  blogsInDb,
+  postsInDb,
 }
