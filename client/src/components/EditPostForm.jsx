@@ -127,11 +127,11 @@ const EditPostForm = ({ post, closeEditMode }) => {
 
         <div className={classes.buttons}>
           <Button color='secondary' variant='outlined' onClick={closeEditMode}>
-                        Cancel
+            Cancel
           </Button>
           {' '}
           <Button color='primary' variant='outlined' type='submit'>
-                        Update
+            Update
           </Button>
         </div>
       </form>

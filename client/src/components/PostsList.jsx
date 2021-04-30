@@ -36,11 +36,11 @@ const PostsList = () => {
       </div>
       <Grid container spacing={2} alignContent="stretch">
         {posts.length > 0 &&
-                    posts.map((post) => (
-                      <Grid item key={post?._id} xs={6} md={calculateMd()}>
-                        <Post {...post} />
-                      </Grid>
-                    ))}
+          posts.map((post) => (
+            <Grid item key={post?._id} xs={6} md={calculateMd()}>
+              <Post {...post} />
+            </Grid>
+          ))}
       </Grid>
     </>
   )

@@ -77,12 +77,12 @@ const PostDetails = ({ match, history }) => {
                 </Typography>
                 <div>
                   <Button color='primary' variant='outlined' startIcon={<EditIcon />} onClick={openEditMode}>
-                                        Edit
+                    Edit
                   </Button>
                   {' '}
                   <Button color='secondary' variant='outlined' startIcon={<DeleteIcon />}
                     onClick={removePost}>
-                                        Delete
+                    Delete
                   </Button>
                 </div>
               </div>
