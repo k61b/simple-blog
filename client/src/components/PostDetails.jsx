@@ -41,6 +41,10 @@ const PostDetails = ({ match, history }) => {
 
   const [editMode, setEditMode] = useState(false)
 
+  useEffect(() => {
+    dispatch(fetchSinglePost(id))
+  }, [dispatch, id])
+
   const openEditMode = () => {
     setEditMode(true)
   }
@@ -48,10 +52,6 @@ const PostDetails = ({ match, history }) => {
   const closeEditMode = () => {
     setEditMode(false)
   }
-
-  useEffect(() => {
-    dispatch(fetchSinglePost(id))
-  }, [dispatch])
 
   const convertRelativeTime = (date) => {
     return moment(date).fromNow()

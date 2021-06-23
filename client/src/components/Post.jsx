@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const Post = ({ _id, title, subtitle, content, tag, image, createdAt }) => {
+const Post = ({ id, title, subtitle, content, tag, image, createdAt }) => {
 
   const classes = useStyles()
   const convertRelativeTime = (date) => {
@@ -70,7 +70,7 @@ const Post = ({ _id, title, subtitle, content, tag, image, createdAt }) => {
       </CardContent>
       <CardActions>
         <Button size='small' color='primary'>
-          <Link to={`/posts/${_id}`}>Read More...</Link>
+          <Link to={`/posts/${id}`}>Read More...</Link>
         </Button>
       </CardActions>
     </Card>
