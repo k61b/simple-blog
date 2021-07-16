@@ -67,9 +67,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@kayraberktuncer](https://twitter.com/kayraberktuncer) - [kayrabtuncer@gmail.com](mailto://kayrabtuncer@gmail.com)
-
-Project Link: [https://github.com/kayraberktuncer/mern-auth](https://github.com/kayraberktuncer/mern-auth)
+Kayra Berk Tuncer - [@kayraberktuncer](https://twitter.com/kayraberktuncer) - [kayrabtuncer@gmail.com](mailto://kayrabtuncer@gmail.com)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
